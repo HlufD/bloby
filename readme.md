@@ -3,6 +3,8 @@
 A modern, lightweight, and flexible file upload middleware for Node.js — designed for simplicity, scalability, and developer happiness.
 
 ## 📦 Core Upload Engine → (in progress)
+    
+    - Parse json data 
 
     - Multipart/form-data parsing
 
