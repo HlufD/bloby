@@ -6,6 +6,7 @@ const readJsonBody = async (req: Request, res: Response): Promise<any> => {
     const contentType = req.headers["content-type"];
     const method = req.method!.toUpperCase();
 
+
     return new Promise((resolve, reject) => {
         let body = "";
         if (METHODS_WITH_BODY.has(method as HTTP_METHODS) && contentType === CONTENT_TYPE.JSON) {
@@ -32,18 +33,3 @@ const readJsonBody = async (req: Request, res: Response): Promise<any> => {
 }
 
 
-const server = createServer(async (req: Request, res: Response) => {
-    try {
-        const body = await readJsonBody(req, res);
-        console.log("Parsed JSON:", body);
-
-        res.writeHead(200, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ ok: true, body }));
-    } catch (error) {
-        res.writeHead(400, { "Content-Type": "text/plain" });
-        res.end("Invalid JSON");
-    }
-})
-
-
-server.listen(3000, () => console.log("Server running on port 3000"));
