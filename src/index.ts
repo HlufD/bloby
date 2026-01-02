@@ -1,6 +1,6 @@
 import { CONTENT_TYPE } from "./enums/content-type.enum";
 import { HTTP_METHODS, METHODS_WITH_BODY } from "./enums/methods.enum";
-import { IncomingMessage as Request, ServerResponse as Response, createServer } from "node:http";
+import { IncomingMessage as Request, ServerResponse as Response } from "node:http";
 
 const readJsonBody = async (req: Request, res: Response): Promise<any> => {
     const contentType = req.headers["content-type"];
