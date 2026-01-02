@@ -32,4 +32,4 @@ const readJsonBody = async (req: Request, res: Response): Promise<any> => {
     })
 }
 
-
+export { readJsonBody }
