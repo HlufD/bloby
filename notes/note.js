@@ -26,6 +26,7 @@ myPromise.then((result) => {
 })
 
 
+// this runs first before the promise chain, i need to investigate
 // using Async await
 try {
     const result = await myPromise;
